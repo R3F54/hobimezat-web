@@ -50,6 +50,22 @@
       grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 14px;
       margin-bottom: 34px;
+      scrollbar-color: #f48c25 #232323;
+      scrollbar-width: thin;
+    }
+
+    .photo-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .photo-grid::-webkit-scrollbar-track {
+      border-radius: 999px;
+      background: #232323;
+    }
+
+    .photo-grid::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: #f48c25;
     }
 
     .photo-card {
@@ -132,16 +148,19 @@
     @media (max-width: 980px) {
       .photo-grid {
         display: flex;
-        gap: 12px;
+        gap: 14px;
         margin-inline: -18px;
         overflow-x: auto;
-        padding: 0 18px 8px;
-        scroll-snap-type: x mandatory;
+        padding: 0 18px 12px;
+        scroll-snap-type: x proximity;
+        scroll-padding-inline: 18px;
+        -webkit-overflow-scrolling: touch;
       }
 
       .photo-card {
-        flex: 0 0 230px;
+        flex: 0 0 220px;
         scroll-snap-align: start;
+        scroll-snap-stop: always;
       }
     }
 
@@ -153,11 +172,13 @@
       .photo-grid {
         margin-inline: -12px;
         margin-bottom: 28px;
-        padding-inline: 12px;
+        padding: 0 calc((100vw - min(82vw, 340px)) / 2) 14px;
+        scroll-padding-inline: calc((100vw - min(82vw, 340px)) / 2);
       }
 
       .photo-card {
-        flex-basis: 76vw;
+        flex: 0 0 min(82vw, 340px);
+        scroll-snap-align: center;
       }
 
       .links,
