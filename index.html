@@ -3,32 +3,310 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hobi Mezat — Hobi Dünyasının Mezat Platformu</title>
+  <title>Hobi Mezat - Hobi Dünyasının Mezat Platformu</title>
+  <meta
+    name="description"
+    content="Hobi dünyasının açık artırma platformu. Koleksiyonundaki hazineleri sat, yeni parçalar keşfet."
+  />
+  <meta property="og:title" content="Hobi Mezat" />
+  <meta
+    property="og:description"
+    content="Hobi dünyasının açık artırma platformu. Koleksiyonundaki hazineleri sat, yeni parçalar keşfet."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://hobimezat.com/ana_sayfa_premium.png" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #121212; color: #fff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-    .logo { width: 100px; height: 100px; border-radius: 22px; margin-bottom: 24px; }
-    h1 { font-size: 2rem; color: #f48c25; margin-bottom: 12px; }
-    p { font-size: 1rem; color: #aaa; max-width: 400px; line-height: 1.6; margin-bottom: 32px; }
-    .badges { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
-    .badge { background: #1e1e1e; border: 1px solid #333; border-radius: 12px; padding: 12px 24px; color: #f48c25; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
-    .badge:hover { background: #f48c25; color: #fff; }
-    footer { position: fixed; bottom: 20px; font-size: 0.8rem; color: #555; }
-    footer a { color: #f48c25; text-decoration: none; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #121212;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 40px 20px 28px;
+    }
+
+    .hero {
+      display: flex;
+      min-height: 78vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 24px;
+      border-radius: 22px;
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      color: #f48c25;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 520px;
+      margin-bottom: 32px;
+      color: #aaa;
+      font-size: 1.05rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      min-width: 150px;
+      border: 1px solid #333;
+      border-radius: 12px;
+      background: #1e1e1e;
+      color: #f48c25;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 12px 24px;
+      text-decoration: none;
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .badge:hover {
+      background: #f48c25;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .screens {
+      padding: 32px 0 72px;
+    }
+
+    .section-heading {
+      margin: 0 auto 28px;
+      max-width: 660px;
+      text-align: center;
+    }
+
+    .section-heading span {
+      display: block;
+      margin-bottom: 8px;
+      color: #f48c25;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .section-heading p {
+      margin-top: 12px;
+      color: #aaa;
+    }
+
+    .screen-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(160px, 1fr));
+      gap: 18px;
+    }
+
+    .screen-card {
+      overflow: hidden;
+      border: 1px solid #2b2b2b;
+      border-radius: 14px;
+      background: #1a1a1a;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.26);
+    }
+
+    .screen-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .screen-card h3 {
+      padding: 14px 14px 16px;
+      color: #f4f4f4;
+      font-size: 0.98rem;
+      text-align: center;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      color: #666;
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #f48c25;
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .screen-grid {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding-inline: 16px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 56px 0 36px;
+      }
+
+      .screen-grid {
+        display: flex;
+        gap: 14px;
+        margin-inline: -16px;
+        overflow-x: auto;
+        padding: 4px 16px 12px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .screen-card {
+        flex: 0 0 min(78vw, 330px);
+        scroll-snap-align: start;
+      }
+    }
   </style>
 </head>
 <body>
-  <img src="https://fvmthmjkdxssddshktue.supabase.co/storage/v1/object/public/public-pages/icon.png" alt="Hobi Mezat" class="logo" onerror="this.style.display='none'" />
-  <h1>Hobi Mezat</h1>
-  <p>Hobi dünyasının açık artırma platformu. Koleksiyonundaki hazineleri sat, yeni parçalar keşfet.</p>
-  <div class="badges">
-    <a class="badge" href="https://play.google.com/store/apps/details?id=com.hobimezat.app" target="_blank">▶ Google Play</a>
-    <a class="badge" href="https://apps.apple.com/app/id6762036610" target="_blank"> App Store</a>
-  </div>
+  <main class="page">
+    <section class="hero" aria-label="Hobi Mezat tanıtım">
+      <img
+        src="https://fvmthmjkdxssddshktue.supabase.co/storage/v1/object/public/public-pages/icon.png"
+        alt="Hobi Mezat"
+        class="logo"
+        onerror="this.style.display='none'"
+      />
+      <h1>Hobi Mezat</h1>
+      <p>
+        Hobi dünyasının açık artırma platformu. Koleksiyonundaki hazineleri sat,
+        yeni parçalar keşfet.
+      </p>
+      <div class="badges">
+        <a
+          class="badge"
+          href="https://play.google.com/store/apps/details?id=com.hobimezat.app"
+          target="_blank"
+          rel="noopener"
+        >Google Play</a>
+        <a
+          class="badge"
+          href="https://apps.apple.com/tr/app/id6762036610"
+          target="_blank"
+          rel="noopener"
+        >App Store</a>
+      </div>
+    </section>
 
-  <footer>
-    <a href="/gizlilik.html">Gizlilik Politikası</a> &nbsp;·&nbsp;
-    <a href="mailto:fatihberber83@gmail.com">İletişim</a>
-  </footer>
+    <section class="screens" aria-labelledby="screens-title">
+      <div class="section-heading">
+        <span>Uygulama ekranları</span>
+        <h2 id="screens-title">Hobi Mezat deneyimini yakından gör.</h2>
+        <p>İlanlar, kategoriler, teklifler, mesajlaşma ve profil ekranları tek akışta.</p>
+      </div>
+
+      <div class="screen-grid">
+        <article class="screen-card">
+          <img
+            src="ana_sayfa_premium.png"
+            alt="Hobi Mezat ana sayfa ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+          <h3>Ana sayfa</h3>
+        </article>
+
+        <article class="screen-card">
+          <img
+            src="kategoriler_premium.png"
+            alt="Hobi Mezat kategoriler ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+          <h3>Kategoriler</h3>
+        </article>
+
+        <article class="screen-card">
+          <img
+            src="ilan_ver_premium.png"
+            alt="Hobi Mezat ilan verme ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+          <h3>İlan ver</h3>
+        </article>
+
+        <article class="screen-card">
+          <img
+            src="mesaj_teklif_premium.png"
+            alt="Hobi Mezat mesaj ve teklif ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+          <h3>Mesaj ve teklif</h3>
+        </article>
+
+        <article class="screen-card">
+          <img
+            src="profil_premium.png"
+            alt="Hobi Mezat profil ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+          <h3>Profil</h3>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <a href="/gizlilik.html">Gizlilik Politikası</a>
+      <span>·</span>
+      <a href="mailto:fatihberber83@gmail.com">İletişim</a>
+    </footer>
+  </main>
 </body>
 </html>
