@@ -113,26 +113,61 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 14px;
+      gap: 12px;
       margin-bottom: 28px;
     }
 
     .store-link {
-      min-width: 158px;
-      border: 1px solid #3a3a3a;
-      border-radius: 12px;
-      background: #1f1f1f;
-      color: #f48c25;
-      font-size: 0.98rem;
-      font-weight: 800;
-      padding: 13px 22px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 178px;
+      min-height: 58px;
+      border: 1px solid #3c3c3c;
+      border-radius: 10px;
+      background: #070707;
+      color: #fff;
+      padding: 9px 13px;
       text-decoration: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
     .store-link:hover {
-      background: #f48c25;
+      border-color: #f48c25;
+      background: #111;
+    }
+
+    .store-icon {
+      display: grid;
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+    }
+
+    .store-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .store-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.05;
+    }
+
+    .store-copy small {
+      color: #cfcfcf;
+      font-size: 0.64rem;
+      font-weight: 650;
+    }
+
+    .store-copy strong {
+      margin-top: 3px;
       color: #fff;
+      font-size: 1rem;
+      font-weight: 850;
     }
 
     footer {
@@ -233,9 +268,21 @@
         scroll-snap-align: center;
       }
 
-      .links,
-      .store-link {
+      .links {
         width: 100%;
+      }
+
+      .store-link {
+        width: calc(50% - 6px);
+        min-width: 0;
+      }
+
+      .store-copy small {
+        font-size: 0.58rem;
+      }
+
+      .store-copy strong {
+        font-size: 0.92rem;
       }
     }
   </style>
@@ -312,13 +359,36 @@
           href="https://play.google.com/store/apps/details?id=com.hobimezat.app"
           target="_blank"
           rel="noopener"
-        >Google Play</a>
+        >
+          <span class="store-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <path fill="#34a853" d="M4.8 3.7c-.4.4-.6 1-.6 1.8v21c0 .8.2 1.4.6 1.8l.1.1L16.7 16 4.9 3.6l-.1.1Z" />
+              <path fill="#fbbc04" d="m20.6 20.1-3.9-4.1 3.9-4.1.1.1 4.7 2.7c1.3.7 1.3 1.9 0 2.6l-4.7 2.7-.1.1Z" />
+              <path fill="#4285f4" d="m20.7 20-4-4L4.8 28.3c.7.7 1.8.7 3.1 0L20.7 20Z" />
+              <path fill="#ea4335" d="M20.7 12 7.9 3.7C6.6 3 5.5 3 4.8 3.7L16.7 16l4-4Z" />
+            </svg>
+          </span>
+          <span class="store-copy">
+            <small>HEMEN İNDİR</small>
+            <strong>Google Play</strong>
+          </span>
+        </a>
         <a
           class="store-link"
           href="https://apps.apple.com/tr/app/id6762036610"
           target="_blank"
           rel="noopener"
-        >App Store</a>
+        >
+          <span class="store-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <path fill="#fff" d="M22.8 16.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.6 1.1-4.6 1.1-.9 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3.1 1.5-.1 2.1-1 4-1s2.4 1 4 1c1.6 0 2.7-1.5 3.7-3 1.2-1.7 1.7-3.4 1.7-3.5-.1-.1-3.3-1.3-3.3-4.8ZM19.8 7.9c.8-1 1.4-2.4 1.2-3.8-1.2 0-2.6.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.3.1 2.7-.7 3.6-1.7Z" />
+            </svg>
+          </span>
+          <span class="store-copy">
+            <small>İNDİR</small>
+            <strong>App Store</strong>
+          </span>
+        </a>
       </div>
     </section>
 
