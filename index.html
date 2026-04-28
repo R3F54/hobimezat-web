@@ -76,6 +76,11 @@
       box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
     }
 
+    .photo-card a {
+      display: block;
+      cursor: zoom-in;
+    }
+
     .photo-card img {
       width: 100%;
       height: auto;
@@ -145,6 +150,53 @@
       text-decoration: none;
     }
 
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(0, 0, 0, 0.84);
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .lightbox img {
+      width: min(92vw, 760px);
+      max-height: 86vh;
+      border-radius: 18px;
+      object-fit: contain;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      inset: 0;
+      cursor: zoom-out;
+    }
+
+    .lightbox-button {
+      position: fixed;
+      top: 16px;
+      right: 18px;
+      z-index: 21;
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border: 1px solid #444;
+      border-radius: 999px;
+      background: #181818;
+      color: #f48c25;
+      font-size: 1.6rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+
     @media (max-width: 980px) {
       .photo-grid {
         display: flex;
@@ -192,48 +244,58 @@
   <main class="page">
     <section class="photo-grid" aria-label="Hobi Mezat uygulama fotoğrafları">
       <div class="photo-card">
-        <img
-          src="ana_sayfa_premium.png"
-          alt="Hobi Mezat ana sayfa ekran görüntüsü"
-          width="1024"
-          height="1024"
-        />
+        <a href="#foto-ana-sayfa" aria-label="Ana sayfa görselini büyüt">
+          <img
+            src="ana_sayfa_premium.png"
+            alt="Hobi Mezat ana sayfa ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+        </a>
       </div>
 
       <div class="photo-card">
-        <img
-          src="kategoriler_premium.png"
-          alt="Hobi Mezat kategoriler ekran görüntüsü"
-          width="1024"
-          height="1024"
-        />
+        <a href="#foto-kategoriler" aria-label="Kategoriler görselini büyüt">
+          <img
+            src="kategoriler_premium.png"
+            alt="Hobi Mezat kategoriler ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+        </a>
       </div>
 
       <div class="photo-card">
-        <img
-          src="ilan_ver_premium.png"
-          alt="Hobi Mezat ilan verme ekran görüntüsü"
-          width="1024"
-          height="1024"
-        />
+        <a href="#foto-ilan-ver" aria-label="İlan verme görselini büyüt">
+          <img
+            src="ilan_ver_premium.png"
+            alt="Hobi Mezat ilan verme ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+        </a>
       </div>
 
       <div class="photo-card">
-        <img
-          src="mesaj_teklif_premium.png"
-          alt="Hobi Mezat mesaj ve teklif ekran görüntüsü"
-          width="1024"
-          height="1024"
-        />
+        <a href="#foto-mesaj-teklif" aria-label="Mesaj ve teklif görselini büyüt">
+          <img
+            src="mesaj_teklif_premium.png"
+            alt="Hobi Mezat mesaj ve teklif ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+        </a>
       </div>
 
       <div class="photo-card">
-        <img
-          src="profil_premium.png"
-          alt="Hobi Mezat profil ekran görüntüsü"
-          width="1024"
-          height="1024"
-        />
+        <a href="#foto-profil" aria-label="Profil görselini büyüt">
+          <img
+            src="profil_premium.png"
+            alt="Hobi Mezat profil ekran görüntüsü"
+            width="1024"
+            height="1024"
+          />
+        </a>
       </div>
     </section>
 
@@ -266,5 +328,35 @@
       <a href="mailto:fatihberber83@gmail.com">İletişim</a>
     </footer>
   </main>
+
+  <div class="lightbox" id="foto-ana-sayfa" aria-label="Ana sayfa büyük görseli">
+    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
+    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
+    <img src="ana_sayfa_premium.png" alt="Hobi Mezat ana sayfa ekran görüntüsü" />
+  </div>
+
+  <div class="lightbox" id="foto-kategoriler" aria-label="Kategoriler büyük görseli">
+    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
+    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
+    <img src="kategoriler_premium.png" alt="Hobi Mezat kategoriler ekran görüntüsü" />
+  </div>
+
+  <div class="lightbox" id="foto-ilan-ver" aria-label="İlan verme büyük görseli">
+    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
+    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
+    <img src="ilan_ver_premium.png" alt="Hobi Mezat ilan verme ekran görüntüsü" />
+  </div>
+
+  <div class="lightbox" id="foto-mesaj-teklif" aria-label="Mesaj ve teklif büyük görseli">
+    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
+    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
+    <img src="mesaj_teklif_premium.png" alt="Hobi Mezat mesaj ve teklif ekran görüntüsü" />
+  </div>
+
+  <div class="lightbox" id="foto-profil" aria-label="Profil büyük görseli">
+    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
+    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
+    <img src="profil_premium.png" alt="Hobi Mezat profil ekran görüntüsü" />
+  </div>
 </body>
 </html>
