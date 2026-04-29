@@ -66,12 +66,15 @@
     }
 
     .video-hero {
-      width: min(880px, 100%);
+      display: flex;
+      justify-content: center;
+      width: 100%;
       margin: 0 auto 28px;
     }
 
     .video-frame {
       overflow: hidden;
+      width: min(440px, 94vw);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 18px;
       background: #0f0f0f;
@@ -81,7 +84,7 @@
     .hero-video {
       display: block;
       width: 100%;
-      max-height: min(72vh, 620px);
+      max-height: min(82vh, 820px);
       background: #0f0f0f;
       object-fit: contain;
     }
@@ -215,7 +218,7 @@
       }
 
       .hero-video {
-        max-height: 58vh;
+        max-height: 70vh;
       }
 
       .links {
@@ -246,7 +249,7 @@
   <main class="page">
     <section class="video-hero" aria-label="Hobi Mezat tanıtım videosu">
       <div class="video-frame">
-        <video class="hero-video" controls autoplay muted loop playsinline preload="metadata" poster="whatsapp-preview.jpg">
+        <video class="hero-video" controls autoplay muted loop playsinline preload="metadata">
           <source src="hobi-mezat-tanitim.mp4" type="video/mp4" />
           Tarayıcınız video oynatmayı desteklemiyor.
         </video>
