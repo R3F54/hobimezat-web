@@ -65,67 +65,25 @@
       padding: 24px 18px 26px;
     }
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 14px;
-      margin-bottom: 14px;
-      scrollbar-color: #f48c25 #232323;
-      scrollbar-width: thin;
+    .video-hero {
+      width: min(880px, 100%);
+      margin: 0 auto 28px;
     }
 
-    .photo-grid::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .photo-grid::-webkit-scrollbar-track {
-      border-radius: 999px;
-      background: #232323;
-    }
-
-    .photo-grid::-webkit-scrollbar-thumb {
-      border-radius: 999px;
-      background: #f48c25;
-    }
-
-    .photo-card {
+    .video-frame {
       overflow: hidden;
-      border: 1px solid #2f2f2f;
-      border-radius: 14px;
-      background: #1a1a1a;
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      background: #0f0f0f;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
     }
 
-    .photo-card a {
+    .hero-video {
       display: block;
-      cursor: zoom-in;
-    }
-
-    .photo-card img {
       width: 100%;
-      height: auto;
-    }
-
-    .gallery-dots {
-      display: flex;
-      justify-content: center;
-      gap: 9px;
-      margin-bottom: 32px;
-    }
-
-    .gallery-dot {
-      width: 8px;
-      height: 8px;
-      border: 0;
-      border-radius: 999px;
-      background: #464646;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    .gallery-dot.is-active {
-      width: 24px;
-      background: #f48c25;
+      max-height: min(72vh, 620px);
+      background: #0f0f0f;
+      object-fit: contain;
     }
 
     .intro {
@@ -243,91 +201,21 @@
       text-decoration: none;
     }
 
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 20;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 22px;
-      background: rgba(0, 0, 0, 0.84);
-    }
-
-    .lightbox:target {
-      display: flex;
-    }
-
-    .lightbox img {
-      width: min(92vw, 760px);
-      max-height: 86vh;
-      border-radius: 18px;
-      object-fit: contain;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
-    }
-
-    .lightbox-close {
-      position: fixed;
-      inset: 0;
-      cursor: zoom-out;
-    }
-
-    .lightbox-button {
-      position: fixed;
-      top: 16px;
-      right: 18px;
-      z-index: 21;
-      display: grid;
-      width: 44px;
-      height: 44px;
-      place-items: center;
-      border: 1px solid #444;
-      border-radius: 999px;
-      background: #181818;
-      color: #f48c25;
-      font-size: 1.6rem;
-      line-height: 1;
-      text-decoration: none;
-    }
-
-    @media (max-width: 980px) {
-      .photo-grid {
-        display: flex;
-        gap: 14px;
-        margin-inline: -18px;
-        overflow-x: auto;
-        padding: 0 18px 12px;
-        scroll-snap-type: x proximity;
-        scroll-padding-inline: 18px;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .photo-card {
-        flex: 0 0 220px;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-      }
-    }
-
     @media (max-width: 560px) {
       .page {
         padding: 14px 12px 24px;
       }
 
-      .photo-grid {
-        margin-inline: -12px;
-        margin-bottom: 12px;
-        padding: 0 calc((100vw - min(82vw, 340px)) / 2) 14px;
-        scroll-padding-inline: calc((100vw - min(82vw, 340px)) / 2);
+      .video-hero {
+        margin-bottom: 24px;
       }
 
-      .photo-card {
-        flex: 0 0 min(82vw, 340px);
-        scroll-snap-align: center;
+      .video-frame {
+        border-radius: 14px;
       }
 
-      .gallery-dots {
-        margin-bottom: 28px;
+      .hero-video {
+        max-height: 58vh;
       }
 
       .links {
@@ -356,75 +244,14 @@
 </head>
 <body>
   <main class="page">
-    <section class="photo-grid" aria-label="Hobi Mezat uygulama fotoğrafları">
-      <div class="photo-card" id="galeri-1">
-        <a href="#foto-ana-sayfa" aria-label="Ana sayfa görselini büyüt">
-          <img
-            src="ana_sayfa_premium_optimized.jpg"
-            onerror="this.onerror=null; this.src='ana_sayfa_premium.png';"
-            alt="Hobi Mezat ana sayfa ekran görüntüsü"
-            width="1024"
-            height="1024"
-          />
-        </a>
-      </div>
-
-      <div class="photo-card" id="galeri-2">
-        <a href="#foto-kategoriler" aria-label="Kategoriler görselini büyüt">
-          <img
-            src="kategoriler_premium_optimized.jpg"
-            onerror="this.onerror=null; this.src='kategoriler_premium.png';"
-            alt="Hobi Mezat kategoriler ekran görüntüsü"
-            width="1024"
-            height="1024"
-          />
-        </a>
-      </div>
-
-      <div class="photo-card" id="galeri-3">
-        <a href="#foto-ilan-ver" aria-label="İlan verme görselini büyüt">
-          <img
-            src="ilan_ver_premium_optimized.jpg"
-            onerror="this.onerror=null; this.src='ilan_ver_premium.png';"
-            alt="Hobi Mezat ilan verme ekran görüntüsü"
-            width="1024"
-            height="1024"
-          />
-        </a>
-      </div>
-
-      <div class="photo-card" id="galeri-4">
-        <a href="#foto-mesaj-teklif" aria-label="Mesaj ve teklif görselini büyüt">
-          <img
-            src="mesaj_teklif_premium_optimized.jpg"
-            onerror="this.onerror=null; this.src='mesaj_teklif_premium.png';"
-            alt="Hobi Mezat mesaj ve teklif ekran görüntüsü"
-            width="1024"
-            height="1024"
-          />
-        </a>
-      </div>
-
-      <div class="photo-card" id="galeri-5">
-        <a href="#foto-profil" aria-label="Profil görselini büyüt">
-          <img
-            src="profil_premium_optimized.jpg"
-            onerror="this.onerror=null; this.src='profil_premium.png';"
-            alt="Hobi Mezat profil ekran görüntüsü"
-            width="1024"
-            height="1024"
-          />
-        </a>
+    <section class="video-hero" aria-label="Hobi Mezat tanıtım videosu">
+      <div class="video-frame">
+        <video class="hero-video" controls autoplay muted loop playsinline preload="metadata" poster="whatsapp-preview.jpg">
+          <source src="hobi-mezat-tanitim.mp4" type="video/mp4" />
+          Tarayıcınız video oynatmayı desteklemiyor.
+        </video>
       </div>
     </section>
-
-    <div class="gallery-dots" aria-label="Galeri göstergesi">
-      <button class="gallery-dot is-active" type="button" aria-label="1. fotoğraf" data-target="galeri-1"></button>
-      <button class="gallery-dot" type="button" aria-label="2. fotoğraf" data-target="galeri-2"></button>
-      <button class="gallery-dot" type="button" aria-label="3. fotoğraf" data-target="galeri-3"></button>
-      <button class="gallery-dot" type="button" aria-label="4. fotoğraf" data-target="galeri-4"></button>
-      <button class="gallery-dot" type="button" aria-label="5. fotoğraf" data-target="galeri-5"></button>
-    </div>
 
     <section class="intro" aria-label="Hobi Mezat bağlantıları">
       <h1>Hobi Mezat</h1>
@@ -481,71 +308,5 @@
       </span>
     </footer>
   </main>
-
-  <div class="lightbox" id="foto-ana-sayfa" aria-label="Ana sayfa büyük görseli">
-    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
-    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
-    <img src="ana_sayfa_premium_optimized.jpg" onerror="this.onerror=null; this.src='ana_sayfa_premium.png';" alt="Hobi Mezat ana sayfa ekran görüntüsü" />
-  </div>
-
-  <div class="lightbox" id="foto-kategoriler" aria-label="Kategoriler büyük görseli">
-    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
-    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
-    <img src="kategoriler_premium_optimized.jpg" onerror="this.onerror=null; this.src='kategoriler_premium.png';" alt="Hobi Mezat kategoriler ekran görüntüsü" />
-  </div>
-
-  <div class="lightbox" id="foto-ilan-ver" aria-label="İlan verme büyük görseli">
-    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
-    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
-    <img src="ilan_ver_premium_optimized.jpg" onerror="this.onerror=null; this.src='ilan_ver_premium.png';" alt="Hobi Mezat ilan verme ekran görüntüsü" />
-  </div>
-
-  <div class="lightbox" id="foto-mesaj-teklif" aria-label="Mesaj ve teklif büyük görseli">
-    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
-    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
-    <img src="mesaj_teklif_premium_optimized.jpg" onerror="this.onerror=null; this.src='mesaj_teklif_premium.png';" alt="Hobi Mezat mesaj ve teklif ekran görüntüsü" />
-  </div>
-
-  <div class="lightbox" id="foto-profil" aria-label="Profil büyük görseli">
-    <a class="lightbox-close" href="#" aria-label="Kapat"></a>
-    <a class="lightbox-button" href="#" aria-label="Kapat">×</a>
-    <img src="profil_premium_optimized.jpg" onerror="this.onerror=null; this.src='profil_premium.png';" alt="Hobi Mezat profil ekran görüntüsü" />
-  </div>
-
-  <script>
-    const gallery = document.querySelector(".photo-grid");
-    const cards = Array.from(document.querySelectorAll(".photo-card"));
-    const dots = Array.from(document.querySelectorAll(".gallery-dot"));
-
-    function setActiveDot(index) {
-      dots.forEach((dot, dotIndex) => {
-        dot.classList.toggle("is-active", dotIndex === index);
-      });
-    }
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        cards[index].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-        setActiveDot(index);
-      });
-    });
-
-    if (gallery && "IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible) {
-          setActiveDot(cards.indexOf(visible.target));
-        }
-      }, {
-        root: gallery,
-        threshold: [0.45, 0.6, 0.75]
-      });
-
-      cards.forEach((card) => observer.observe(card));
-    }
-  </script>
 </body>
 </html>
