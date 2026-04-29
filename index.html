@@ -173,6 +173,53 @@
       font-weight: 900;
     }
 
+    .seo-section {
+      width: min(920px, 100%);
+      margin: 6px auto 34px;
+      color: #d7d7d7;
+    }
+
+    .seo-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .seo-panel {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.035);
+      padding: 22px;
+    }
+
+    .seo-panel h2,
+    .seo-panel h3 {
+      margin-bottom: 10px;
+      color: #f48c25;
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .seo-panel p {
+      color: #c9c9c9;
+      font-size: 0.98rem;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      color: #c9c9c9;
+      font-size: 0.95rem;
+    }
+
+    .feature-list strong {
+      color: #fff;
+    }
+
     .site-footer {
       display: flex;
       align-items: center;
@@ -238,6 +285,14 @@
         font-size: 0.9rem;
       }
 
+      .seo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .seo-panel {
+        padding: 18px;
+      }
+
       .site-footer {
         flex-direction: column;
         gap: 8px;
@@ -299,6 +354,52 @@
             <strong>App Store</strong>
           </span>
         </a>
+      </div>
+    </section>
+
+    <section class="seo-section" aria-label="Hobi Mezat hakkında">
+      <div class="seo-grid">
+        <article class="seo-panel">
+          <h2>Hobi Mezat Nedir?</h2>
+          <p>
+            Hobi Mezat, hobi tutkunlarını, koleksiyoncuları ve ikinci el eşya
+            severleri bir araya getiren Türkiye odaklı bir açık artırma
+            platformudur. Elindeki hobi eşyalarını açık artırma ile satabilir,
+            yeni parçalar keşfedebilir ve ürünlere gerçek mezat heyecanıyla
+            teklif verebilirsin.
+          </p>
+        </article>
+
+        <article class="seo-panel">
+          <h3>Açık Artırma ile Neler Satılabilir?</h3>
+          <p>
+            Balıkçılıktan kamp ve karavana, deniz araçları ve parçalarından el
+            sanatları ile ahşap ürünlere kadar birçok hobi alanı Hobi Mezat'ta
+            buluşur. Hobi hayvanları, koleksiyon parçaları, maket ve model
+            ürünleri, elektronik ürünler, vintage eşyalar, spor ekipmanları,
+            kitap, dergi ve müzik koleksiyonları için açık artırma deneyimi sunar.
+          </p>
+        </article>
+
+        <article class="seo-panel">
+          <h3>Hobi Eşyalarını Sat ya da Hobine Değer Kat</h3>
+          <p>
+            Koleksiyon parçasına, hobi malzemene veya ikinci el ürününe gerçek
+            değerini buldur. Açık artırma sistemiyle alıcılar teklif vererek
+            rekabet eder, sen de ürününü en yüksek teklife ulaştırma şansı
+            yakalarsın.
+          </p>
+        </article>
+
+        <article class="seo-panel">
+          <h3>Öne Çıkan Özellikler</h3>
+          <ul class="feature-list">
+            <li><strong>Son 5 Dakika Heyecanı:</strong> İlan bitmeden teklif gelirse süre otomatik uzar.</li>
+            <li><strong>Anlık Bildirimler:</strong> Teklifler, favoriler ve ilan hareketleri anında gelir.</li>
+            <li><strong>Güvenli Mesajlaşma:</strong> Alıcı ve satıcı uygulama içinde iletişim kurabilir.</li>
+            <li><strong>Güven Puanı:</strong> İşlem sayısı, değerlendirmeler ve güven puanı şeffaf görünür.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
