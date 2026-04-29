@@ -262,6 +262,60 @@
       color: #fff;
     }
 
+    .faq-section {
+      width: min(920px, 100%);
+      margin: 0 auto 36px;
+    }
+
+    .faq-section h2 {
+      margin-bottom: 14px;
+      color: #f48c25;
+      font-size: 1.45rem;
+      text-align: center;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .faq-list details {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.035);
+      padding: 0;
+    }
+
+    .faq-list summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 18px;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary::after {
+      content: "+";
+      float: right;
+      color: #f48c25;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .faq-list details[open] summary::after {
+      content: "-";
+    }
+
+    .faq-list p {
+      padding: 0 18px 16px;
+      color: #c9c9c9;
+      font-size: 0.96rem;
+    }
+
     .site-footer {
       display: flex;
       align-items: center;
@@ -455,6 +509,84 @@
             <li><strong>Güven Puanı:</strong> İşlem sayısı, değerlendirmeler ve güven puanı şeffaf görünür.</li>
           </ul>
         </article>
+      </div>
+    </section>
+
+    <section class="faq-section" aria-label="Sık sorulan sorular">
+      <h2>Sık Sorulan Sorular</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Hobi Mezat nasıl çalışır?</summary>
+          <p>
+            Hobi Mezat, hobi ve koleksiyon ürünlerinin açık artırma yöntemiyle
+            alınıp satılabildiği bir platformdur. Uygulama alıcı ve satıcıyı
+            bir araya getirir; satış süreci taraflar arasında yürütülür.
+          </p>
+        </details>
+
+        <details>
+          <summary>Hobi Mezat ürün satıyor mu?</summary>
+          <p>
+            Hayır. Hobi Mezat doğrudan ürün satışı yapmaz. Platform,
+            kullanıcıların ilan oluşturmasına, teklif vermesine ve alıcı-satıcı
+            iletişimi kurmasına aracılık eder.
+          </p>
+        </details>
+
+        <details>
+          <summary>Teklif vermek ne anlama gelir?</summary>
+          <p>
+            Verilen teklifler bağlayıcıdır. Bir ürüne teklif verdiğinizde, açık
+            artırmayı kazanmanız halinde satıcıyla ödeme ve teslimat sürecini
+            yürütmeniz beklenir.
+          </p>
+        </details>
+
+        <details>
+          <summary>Ödeme ve teslimat nasıl yapılır?</summary>
+          <p>
+            Ödeme ve teslimat süreci alıcı ile satıcı arasında kararlaştırılır.
+            Hobi Mezat ödeme işlemlerine aracılık etmez ve taraflar arasındaki
+            ödeme ya da teslimat anlaşmazlıklarından sorumlu değildir.
+          </p>
+        </details>
+
+        <details>
+          <summary>Hangi ilanlar yasaktır?</summary>
+          <p>
+            Sahte, yanıltıcı, yasa dışı, telif hakkı ihlali içeren veya gerçek
+            ürünü yansıtmayan ilanlar yasaktır. İlan fotoğrafları ürünün gerçek
+            görüntüsünü göstermelidir.
+          </p>
+        </details>
+
+        <details>
+          <summary>Hangi davranışlara izin verilmez?</summary>
+          <p>
+            Sahte teklif vermek, fiyatları yapay olarak artırmak, kullanıcıları
+            taciz etmek, sistemi manipüle etmeye çalışmak, yasa dışı ürün alım
+            satımı yapmak ve spam içerik paylaşmak yasaktır.
+          </p>
+        </details>
+
+        <details>
+          <summary>Efsane Puanlar nedir?</summary>
+          <p>
+            Efsane Puanlar, uygulama içindeki belirli aksiyonlarla kazanılabilen
+            puanlardır. Parasal değer taşımaz, gerçek para ile alınıp satılamaz.
+          </p>
+        </details>
+
+        <details>
+          <summary>Hobi Mezat alışverişlerden sorumlu mu?</summary>
+          <p>
+            Hobi Mezat, alıcı ve satıcıyı bir araya getiren aracı bir
+            platformdur. Ürünün açıklamaya uygunluğu, ödeme, teslimat ve
+            kullanıcılar arasındaki anlaşmazlıklar alıcı ile satıcı arasındadır.
+            Platform, kullanıcılar arasındaki alışverişlerin güvenliğini garanti
+            etmez.
+          </p>
+        </details>
       </div>
     </section>
 
